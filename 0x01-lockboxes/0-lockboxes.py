@@ -1,4 +1,6 @@
-def can_unlock_all(boxes):
+#!/usr/bin/python3
+
+def canUnlockAll(boxes):
     """
     Determines if all boxes can be opened using the available keys.
 
@@ -25,4 +27,3 @@ def can_unlock_all(boxes):
             keys_stack.extend(boxes[key])
 
     return all(visited)
-
