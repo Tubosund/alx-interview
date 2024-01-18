@@ -4,10 +4,8 @@ def minOperations(n):
     """
     Calculates the minimum number of operations (Copy All and Paste) required to
     achieve exactly n H characters in a text file, starting with a single H.
-
     Args:
         n: The target number of H characters.
-
     Returns:
         The minimum number of operations required, or 0 if n is not achievable.
     """
@@ -26,3 +24,4 @@ def minOperations(n):
 
     # Otherwise, n is not achievable
     return 0
+
