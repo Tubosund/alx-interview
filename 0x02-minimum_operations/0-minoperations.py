@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def minOperations(n):
     """
     Calculates the minimum number of operations (Copy All and Paste) required to
@@ -24,4 +26,3 @@ def minOperations(n):
 
     # Otherwise, n is not achievable
     return 0
-
