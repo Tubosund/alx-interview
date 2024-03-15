@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""prime number"""
+"""prime num"""
 
-def isWinner(x, nums):
+def is_prime(num):
     """Efficiently checks if a number is prime."""
     if num <= 1:
         return False
@@ -23,7 +23,7 @@ def remove_multiples(nums, prime):
     new_nums = [num for num in nums if num % prime != 0]
     return new_nums
 
-def isWinner(x, nums):  # Function name corrected to match import
+def isWinner(x, nums):
     """Determines the winner of the game based on optimal play."""
     maria_wins = 0
     ben_wins = 0
@@ -32,15 +32,15 @@ def isWinner(x, nums):  # Function name corrected to match import
         n = nums.pop(0)  # Assuming Maria always picks the first number
 
         # Find an available prime (not necessarily the smallest)
-        prime = next((num for num in nums if isWinner(num)), None)  # Minor correction
+        prime = next((num for num in nums if is_prime(num)), None)
 
         if prime:
             nums = remove_multiples(nums, prime)
 
-            if not any(isWinner(num) for num in nums):  # Ben cannot pick a prime
+            if not any(is_prime(num) for num in nums):  # Ben cannot pick a prime
                 maria_wins += 1
             else:
-                nums = remove_multiples(nums, next(num for num in nums if isWinner(num)))
+                nums = remove_multiples(nums, next(num for num in nums if is_prime(num)))
 
         # Ben automatically wins if there are no primes left for Maria
         else:
